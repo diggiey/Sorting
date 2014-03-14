@@ -1,4 +1,4 @@
-public class insertionSort {
+public class bubbleSort {
 	public static void main(String[] args) {
 		int[] x = {3, 1, 6, 7, 1, 2};
 		while (isSorted(sort(x)) == false) {
@@ -8,10 +8,11 @@ public class insertionSort {
 
 	public static int[] sort(int[] x) {
 		for (int i=0; i<x.length-1; i++) {
-			if (x[i] > x[i+1]) {
-				int temp = x[i+1];
-				x[i+1] = x[i];
-				x[i] = temp;
+			if (i != x.length-1 && x[i] > x[i+1]) {
+				int temp = x[i];
+				x[i] = x[i+1];
+				x[i+1] = temp;
+				i = 0;
 			}
 		}
 		return x;
